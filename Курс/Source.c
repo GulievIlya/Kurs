@@ -22,7 +22,7 @@ int main() {
 	setlocale(LC_ALL, "RU");
 	int n, p = 0, k = 0, time[3], j[3];
 	for (;;) {
-		puts("Выберите действие:\n1)Ввод значений:\n2)Напечатать поля структур\n3)Поиск структуры по критерию\n4)Выход из программы");
+		puts("Р’С‹Р±РµСЂРёС‚Рµ РґРµР№СЃС‚РІРёРµ:\n1)Р’РІРѕРґ Р·РЅР°С‡РµРЅРёР№:\n2)РќР°РїРµС‡Р°С‚Р°С‚СЊ РїРѕР»СЏ СЃС‚СЂСѓРєС‚СѓСЂ\n3)РџРѕРёСЃРє СЃС‚СЂСѓРєС‚СѓСЂС‹ РїРѕ РєСЂРёС‚РµСЂРёСЋ\n4)Р’С‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹");
 		scanf("%d", &n);
 		polz log;
 		polz* log_p = NULL;
@@ -42,36 +42,36 @@ int main() {
 	}
 }
 void put_str(polz* so) {
-	printf("1)Логин:");
+	printf("1)Р›РѕРіРёРЅ:");
 	scanf("%s", &(*so).login);
-	printf("\n2)Дата входа:");
+	printf("\n2)Р”Р°С‚Р° РІС…РѕРґР°:");
 	scanf("%d", &(*so).data_vh);
-	printf("\n3)Дата выхода в онлайн (ч. мин. сек.)");
+	printf("\n3)Р”Р°С‚Р° РІС‹С…РѕРґР° РІ РѕРЅР»Р°Р№РЅ (С‡. РјРёРЅ. СЃРµРє.)");
 	scanf("%d", &(*so).online[0]);
 	scanf("%d", &(*so).online[1]);
 	scanf("%d", &(*so).online[2]);
-	printf("\n4)Дата завершения сеанса (ч. мин. сек.)");
+	printf("\n4)Р”Р°С‚Р° Р·Р°РІРµСЂС€РµРЅРёСЏ СЃРµР°РЅСЃР° (С‡. РјРёРЅ. СЃРµРє.)");
 	scanf("%d", &(*so).ofline[0]);
 	scanf("%d", &(*so).ofline[1]);
 	scanf("%d", &(*so).ofline[2]);
-	printf("\n5)Загруженные МБ:");
+	printf("\n5)Р—Р°РіСЂСѓР¶РµРЅРЅС‹Рµ РњР‘:");
 	scanf("%f", &(*so).dowloand);
-	printf("\n6)Отправленные МБ:");
+	printf("\n6)РћС‚РїСЂР°РІР»РµРЅРЅС‹Рµ РњР‘:");
 	scanf("%f", &(*so).send);
 }
 void tabl(polz* so) {
 	printf("\n___________________________________________");
-	printf("\n|Логин пользователя(7сим):  %s\n", (*so).login);
-	printf("|Дата выхода в on-line:  %d\n", (*so).data_vh);
-	printf("|Время начала сеанса on-line:  %d:%d:%d\n", (*so).online[0], (*so).online[1], (*so).online[2]);
-	printf("|Время завершения сеанса on-line:  %d:%d:%d\n", (*so).ofline[0], (*so).ofline[1], (*so).ofline[2]);
-	printf("|скаченные/отправленные МБ:  %.2f/%.2f\t  \n", (*so).dowloand, (*so).send);
+	printf("\n|Р›РѕРіРёРЅ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ(7СЃРёРј):  %s\n", (*so).login);
+	printf("|Р”Р°С‚Р° РІС‹С…РѕРґР° РІ on-line:  %d\n", (*so).data_vh);
+	printf("|Р’СЂРµРјСЏ РЅР°С‡Р°Р»Р° СЃРµР°РЅСЃР° on-line:  %d:%d:%d\n", (*so).online[0], (*so).online[1], (*so).online[2]);
+	printf("|Р’СЂРµРјСЏ Р·Р°РІРµСЂС€РµРЅРёСЏ СЃРµР°РЅСЃР° on-line:  %d:%d:%d\n", (*so).ofline[0], (*so).ofline[1], (*so).ofline[2]);
+	printf("|СЃРєР°С‡РµРЅРЅС‹Рµ/РѕС‚РїСЂР°РІР»РµРЅРЅС‹Рµ РњР‘:  %.2f/%.2f\t  \n", (*so).dowloand, (*so).send);
 	printf("|___________________________________________\n");
 }
 void tlog(polz* log) {
 	char c[7];
 	int p, k = 0, time[3], j[3];
-	puts("Введите логин для поиска:");
+	puts("Р’РІРµРґРёС‚Рµ Р»РѕРіРёРЅ РґР»СЏ РїРѕРёСЃРєР°:");
 	scanf("%s", &c);
 	p = strlen(c);
 	for (int p = strlen(c), i = 0;i <= p;i++) {
@@ -79,17 +79,17 @@ void tlog(polz* log) {
 			k++;
 	}
 	if (((k - 1) == p) || ((k - 1) == p - 1)) {
-		puts("Найденный логин");
+		puts("РќР°Р№РґРµРЅРЅС‹Р№ Р»РѕРіРёРЅ");
 		printf("%s", (*log).login);
 	}
-	else puts("Не найденно!");
+	else puts("РќРµ РЅР°Р№РґРµРЅРЅРѕ!");
 	time[0] = (*log).ofline[0] - (*log).online[0];
 	time[1] = (*log).ofline[1] - (*log).online[1];
 	time[2] = (*log).ofline[2] - (*log).online[2];
-	printf("\nВведите длительность сеанса online(ч)");
+	printf("\nР’РІРµРґРёС‚Рµ РґР»РёС‚РµР»СЊРЅРѕСЃС‚СЊ СЃРµР°РЅСЃР° online(С‡)");
 	scanf("%d", &j[0]);
 	if (time[0] == j[0]) {
-		printf("Сеанс длился с %d ч %d мин %d сек до %d ч %d мин %d сек ", (*log).online[0], (*log).online[1], (*log).online[2], (*log).ofline[0], (*log).ofline[1], (*log).ofline[2]);
+		printf("РЎРµР°РЅСЃ РґР»РёР»СЃСЏ СЃ %d С‡ %d РјРёРЅ %d СЃРµРє РґРѕ %d С‡ %d РјРёРЅ %d СЃРµРє ", (*log).online[0], (*log).online[1], (*log).online[2], (*log).ofline[0], (*log).ofline[1], (*log).ofline[2]);
 	}
-	else puts("не найденно ! ");
+	else puts("РЅРµ РЅР°Р№РґРµРЅРЅРѕ ! ");
 }
