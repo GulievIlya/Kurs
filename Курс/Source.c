@@ -29,7 +29,6 @@ int main() {
 		switch (n) {
 		case 1:
 			put_str(&log);
-			printf("%s", log.login);
 			break;
 		case 2:
 			tabl(&log);
