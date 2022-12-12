@@ -171,6 +171,6 @@ int readfile(polz* ptr_struct, int size) {
 void vvod(polz* ptr_struct, int size) { //Запись последней структуры в файл 
 	FILE* ptr_file = fopen("BD.txt", "a");
 	int i = size-1;
-	fprintf(ptr_file, "\n %s %d %d %d %d %d %d %d %f %f", ptr_struct[i].login, ptr_struct[i].data_vh, ptr_struct[i].online[0], ptr_struct[i].online[1], ptr_struct[i].online[2], ptr_struct[i].ofline[0], ptr_struct[i].ofline[1], ptr_struct[i].ofline[2], ptr_struct[i].dowloand, ptr_struct[i].send);
+	fprintf(ptr_file, "\n%s %d %d %d %d %d %d %d %f %f", ptr_struct[i].login, ptr_struct[i].data_vh, ptr_struct[i].online[0], ptr_struct[i].online[1], ptr_struct[i].online[2], ptr_struct[i].ofline[0], ptr_struct[i].ofline[1], ptr_struct[i].ofline[2], ptr_struct[i].dowloand, ptr_struct[i].send);
 	fclose(ptr_file);
 }
