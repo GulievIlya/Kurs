@@ -27,7 +27,8 @@ int main() {
 	setlocale(LC_ALL, "RU");
 	FILE* file_ptr;
 	int n,chislo=0;//n-действие 
-	polz baze[100], * ptr_zapis = &baze[chislo];
+	polz baze[100], * ptr_zapis = &baze;
+	ptr_zapis = (struct polz*)malloc(chislo*sizeof(polz));
 	while(1) {
 	puts("\nВыберите действие:\n1)Ввод значений:\n2)Напечатать поля структур\n3)Поиск структур по логину\n4)Поиск структур по длительности сеанса ч.\n5)Сортировка по Объему потреблённого трафика за сеанс в Мб (принято + отправлено)\n6)Считать данные с файла\n7)Запись в файл \n8)выход из программы");
 	scanf("%d", &n);
